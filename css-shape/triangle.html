@@ -18,6 +18,18 @@
             border-bottom: 100px solid red;
         }
 
+        #shanxing {
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 100px solid red;
+            /* 先画个三角形，再修改底边为圆角 */
+            /* border-bottom-right-radius: 50px;
+            border-bottom-left-radius: 50px; */
+            border-radius: 50px;
+        }
+
         #triangle-down {
             width: 0;
             height: 0;
@@ -61,6 +73,8 @@
 <body>
     <h2>上三角</h2>
     <div id="triangle-up"></div>
+    <h2>扇形</h2>
+    <div id="shanxing"></div>
     <h2>下三角</h2>
     <div id="triangle-down"></div>
     <h2>左三角</h2>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>利用 CSS 画 0.5px 宽度的线及边框</title>
+    <style>
+        .border1px {
+            background-color: #000;
+            height: 1px;
+            margin-bottom: 30px;
+        }
+
+        .border_transform {
+            background-color: #000;
+            height: 1px;
+            /* 利用缩放实现 */
+            transform: scaleY(0.5);
+            /*不写下面这条语句在 chrome 中会变成模糊的线和正常的线不同 */
+            transform-origin: 50% 100%;
+            margin-bottom: 30px;
+        }
+
+        /* 
+        0.5px 边框
+         */
+        .container {
+            position: relative;
+            height: 100px;
+            width: 100px;
+            background-color: pink;
+        }
+
+        .inner {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            height: 200%;
+            width: 200%;
+            border: 1px solid #000;
+            transform: scale(0.5);
+            transform-origin: center; /* 设置变形原点为元素中心 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 0.5px 的线 -->
+    <div class="border1px"></div>
+    <div class="border_transform"></div>
+
+    <!-- 0.5px 边框 -->
+    <div class="container">
+        <div class="inner"></div>
+    </div>
+</body>
+
+</html>
